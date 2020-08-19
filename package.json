@@ -1,0 +1,15 @@
+{
+  "name": "append-commit-message",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "yangdage",
+  "keywords": ["git", "commit"],
+  "scripts": {
+    "postinstall": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT"
+}
