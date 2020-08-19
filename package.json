@@ -3,13 +3,15 @@
   "version": "0.0.1",
   "main": "index.js",
   "author": "yangdage",
-  "keywords": ["git", "commit"],
+  "description": "git commit hooks",
+  "keywords": ["git", "commit", "message"],
   "scripts": {
     "postinstall": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:SHEIN-WMS-FE/append-commit-message.git"
   },
+  "bugs": "https://github.com/SHEIN-WMS-FE/append-commit-message/issues/new",
   "license": "MIT"
 }
