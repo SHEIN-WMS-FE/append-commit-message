@@ -22,12 +22,14 @@ if [ -n "$BRANCH_NAME" ] && ! [[ $BRANCH_EXCLUDED -eq 1 ]] && ! [[ $BRANCH_IN_CO
 fi
 `;
 
-const filePath = path.join(__dirname, '.git/hooks/prepare-commit-msg');
+const userPath = process.env.INIT_CWD;
+
+const filePath = path.join(userPath, '.git/hooks/prepare-commit-msg');
 
 fs.writeFileSync(filePath, str, 'utf-8');
 
 try {
-  execSync('chmod a+x .git/hooks/*');
+  execSync(`chmod a+x ${path.join(userPath, '.git/hooks/*')}`);
   console.log('操作成功')
 } catch (e) {
   console.error('操作失败');

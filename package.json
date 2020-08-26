@@ -1,12 +1,12 @@
 {
   "name": "append-commit-message",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "main": "index.js",
   "author": "yangdage",
   "description": "git commit hooks",
   "keywords": ["git", "commit", "message"],
   "scripts": {
-    "postinstall": "node index.js"
+    "postinstall": "node ./index.js"
   },
   "repository": {
     "type": "git",
