@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const os = require('os');
 
 const str = `
 COMMIT_MSG_FILE=$1
@@ -26,11 +27,18 @@ const userPath = process.env.INIT_CWD;
 
 const filePath = path.join(userPath, '.git/hooks/prepare-commit-msg');
 
-fs.writeFileSync(filePath, str, 'utf-8');
+// aix darwin freebsd linux openbsd sunos win32
+const platform = process.platform;
 
-try {
-  execSync(`chmod a+x ${path.join(userPath, '.git/hooks/*')}`);
-  console.log('操作成功')
-} catch (e) {
-  console.error('操作失败');
+if (fs.existsSync(filePath)) {
+  fs.writeFileSync(filePath, str, 'utf-8');
+  try {
+    if (platform === 'darwin') {
+      execSync(`chmod a+x ${path.join(userPath, '.git/hooks/*')}`);
+    }
+    console.log('操作成功')
+  } catch (e) {
+    console.error('操作失败');
+  }
+
 }
