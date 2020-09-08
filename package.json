@@ -1,6 +1,6 @@
 {
   "name": "append-commit-message",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "author": "yangdage",
   "description": "git commit hooks",
